@@ -1,0 +1,22 @@
+/*limit service*/
+http://localhost:8090/limits
+http://localhost:8888/limit-service/qa
+
+
+/*currency exchange service and curerncy conversion service*/
+http://localhost:8091/currency-exchange/from/USD/to/INR
+http://localhost:8092/currency-conversion/from/USD/to/INR/quantity/10
+http://localhost:8092/currency-conversion-feign/from/USD/to/INR/quantity/10
+
+/*eureka server*/
+http://localhost:8761/
+
+/*api-gateway*/
+http://localhost:8765/CURRENCY-CONVERSION-SERVICE/currency-conversion/from/USD/to/INR/quantity/10
+http://localhost:8765/CURRENCY-EXCHANGE-SERVICE/currency-exchange/from/USD/to/INR
+http://localhost:8765/currency-exchange/from/USD/to/INR
+http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10
+http://localhost:8765/currency-conversion-feign/from/EUR/to/INR/quantity/10
+
+/*testing circuit breaker in exchange service */
+watch -n 0.1 curl http://localhost:8091/sample-circuit-breaker
